@@ -41,7 +41,7 @@ public class MovingSineWave : MonoBehaviour
         lr.positionCount = points;
         lr.useWorldSpace = false;
 
-        ComputerText.text = "move on wasd\nuse wave to find signal";
+        ComputerText.text = "Warning From Deep Space";
         player.gameObject.SetActive(false);
 
         // Налаштування звуку
@@ -55,7 +55,7 @@ public class MovingSineWave : MonoBehaviour
         isOnScene = true;
 
         StartButton.GameObject().SetActive(false);
-        ComputerText.text = "";
+        ComputerText.text = "w a s d";
 
         signalZone.RandomSpawn();
         player.gameObject.SetActive(true);

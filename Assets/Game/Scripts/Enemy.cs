@@ -13,8 +13,14 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 2f;
     public float changeDirectionTime = 1f;
 
+    [Header("Particles")]
+    public GameObject particlePrefab;
+    public float particleInterval = 0.5f;
+    public float particleLifetime = 2f;
+
     private Vector2 moveDirection;
     private float timer;
+    private float particleTimer;
     private Rigidbody2D rb;
 
     // ====== SPAWN ======
@@ -43,16 +49,13 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         HandleDirectionChange();
+        HandleParticles();
     }
 
     void FixedUpdate()
     {
-        Move();
-    }
-
-    void Move()
-    {
-        rb.linearVelocity = moveDirection * moveSpeed;
+        Vector2 nextPos = rb.position + moveDirection * moveSpeed * Time.fixedDeltaTime;
+        rb.MovePosition(nextPos);
     }
 
     void HandleDirectionChange()
@@ -70,24 +73,40 @@ public class Enemy : MonoBehaviour
     {
         moveDirection = Random.insideUnitCircle.normalized;
 
-        // Ó‰‡ÁÛ ÓÌÓ‚Î˛∫ÏÓ ¯‚Ë‰Í≥ÒÚ¸
         if (rb != null)
             rb.linearVelocity = moveDirection * moveSpeed;
     }
 
-    // ====== —“≤Õ» ======
+    // ====== PARTICLES ======
+    void HandleParticles()
+    {
+        if (particlePrefab == null) return;
+
+        particleTimer += Time.deltaTime;
+
+        if (particleTimer >= particleInterval)
+        {
+            SpawnParticles();
+            particleTimer = 0f;
+        }
+    }
+
+    void SpawnParticles()
+    {
+        GameObject p = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+        Destroy(p, particleLifetime);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
             PickNewDirection();
+            return;
         }
-    }
 
-    // ====== √–¿¬≈÷‹ ======
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Screamer();
             Destroy(gameObject);
