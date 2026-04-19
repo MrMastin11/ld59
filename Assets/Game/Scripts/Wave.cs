@@ -14,9 +14,16 @@ public class MovingSineWave : MonoBehaviour
     public Vector3 startPosition = Vector3.zero;
 
     [Header("Noise settings")]
-    public float maxNoise = 5f;   // далеко (шумно)
-    public float minNoise = 0f;   // близько (чисто)
+    public float maxNoise = 5f;
+    public float minNoise = 0f;
     public float maxDistance = 5f;
+
+    [Header("Hit Noise Boost")]
+    public float hitNoiseBoost = 0.5f;      // різкий буст
+    public float hitNoiseDuration = 0.5f;   // час повернення
+
+    private float currentNoiseBoost = 0f;
+    private float noiseVelocity = 0f;
 
     [Header("Sound settings")]
     public float maxVolume = 1f;
@@ -33,6 +40,9 @@ public class MovingSineWave : MonoBehaviour
     private AudioSource audioSource;
     private bool isOnScene = false;
 
+    [Header("Start sound")]
+    public AudioClip startSound;
+
     void Start()
     {
         lr = GetComponent<LineRenderer>();
@@ -44,10 +54,9 @@ public class MovingSineWave : MonoBehaviour
         ComputerText.text = "Warning From Deep Space";
         player.gameObject.SetActive(false);
 
-        // Налаштування звуку
         audioSource.loop = true;
         audioSource.playOnAwake = false;
-        audioSource.volume = 0f;
+        audioSource.volume = 1f;
     }
 
     public void StartWave()
@@ -55,35 +64,53 @@ public class MovingSineWave : MonoBehaviour
         isOnScene = true;
 
         StartButton.GameObject().SetActive(false);
-        ComputerText.text = "w a s d";
+        ComputerText.text = "W A S D\nUse Wave\nTo Find Signal";
 
         signalZone.RandomSpawn();
         player.gameObject.SetActive(true);
 
+        // старт звук
+        if (startSound != null)
+            audioSource.PlayOneShot(startSound);
+
+        // основний звук
         audioSource.Play();
+    }
+
+    //  виклик при ударі
+    public void TriggerNoiseBoost()
+    {
+        currentNoiseBoost = hitNoiseBoost;
     }
 
     void Update()
     {
         if (!isOnScene || player == null || signalZone == null) return;
 
-        float timeOffset = Time.time * speed;
+        // плавне затухання бусту
+        currentNoiseBoost = Mathf.SmoothDamp(
+            currentNoiseBoost,
+            0f,
+            ref noiseVelocity,
+            hitNoiseDuration
+        );
 
+        float timeOffset = Time.time * speed;
         float distance = Vector3.Distance(player.position, signalZone.transform.position);
 
         float t = Mathf.Clamp01(distance / maxDistance);
-        t = t * t; // плавніше
+        t = t * t;
 
-        // ШУМ
-        float noiseAmount = Mathf.Lerp(maxNoise, minNoise, t);
+        // базовий шум + буст
+        float baseNoise = Mathf.Lerp(maxNoise, minNoise, t);
+        float noiseAmount = baseNoise + currentNoiseBoost;
 
-        // ТОВЩИНА ЛІНІЇ
+        // товщина
         lr.startWidth = 0.1f + Mathf.Sin(Time.time * 5f) * 0.02f;
         lr.endWidth = lr.startWidth;
 
-        // 🔊 ГУЧНІСТЬ (чим ближче — тим гучніше)
+        // звук
         float volume = Mathf.Lerp(maxVolume, minVolume, t);
-        volume = Mathf.Pow(volume, 1f); // більш природно
         audioSource.volume = volume;
         audioSource.pitch = Mathf.Lerp(0.5f, 1.5f, 1 - t);
 
@@ -93,7 +120,6 @@ public class MovingSineWave : MonoBehaviour
             float x = tPoint * length;
 
             float y = Mathf.Sin(x * frequency - timeOffset) * amplitude;
-
             y += Random.Range(-noiseAmount, noiseAmount);
 
             lr.SetPosition(i, startPosition + new Vector3(x, y, 0));
