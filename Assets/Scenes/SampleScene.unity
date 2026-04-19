@@ -1931,6 +1931,63 @@ MonoBehaviour:
     time;We recorded your signals;You do not understand happening;We are not joking;This
     is already decided;Your planet will be destroyed;There is no escape;Do not search
     for us;Do not send signals back;It will not help;Run;NoSignal
+  sounds:
+  - {fileID: 8300000, guid: e630642aabf9b5b44a9951f3d65c43fd, type: 3}
+  - {fileID: 8300000, guid: 233c83f2589dd3741b566798ce22a12a, type: 3}
+  - {fileID: 8300000, guid: b607c6eae08284740814d69e5c1e14fd, type: 3}
+  - {fileID: 8300000, guid: f62105cce8abaa04fa9a0797dea8d1e0, type: 3}
+  - {fileID: 8300000, guid: 28c96b4082306174da2a02d4878167a3, type: 3}
+  - {fileID: 8300000, guid: 4fb67edae9ce2f749bb072b683d4126d, type: 3}
+  - {fileID: 8300000, guid: c1f073ac32902d848ae385c7cce214f6, type: 3}
+  - {fileID: 8300000, guid: dd7991c85f6e5fe42ad3add1e825668d, type: 3}
+  - {fileID: 8300000, guid: b607c6eae08284740814d69e5c1e14fd, type: 3}
+  - {fileID: 8300000, guid: f62105cce8abaa04fa9a0797dea8d1e0, type: 3}
+  - {fileID: 8300000, guid: d71c3b81e83d6a444a8813565f66756b, type: 3}
+  - {fileID: 8300000, guid: 6ceb95aad471e6e4b9935040fc8fb9d9, type: 3}
+  - {fileID: 8300000, guid: adb935ee64c5ef44d8b07b6f8ba2b899, type: 3}
+  - {fileID: 8300000, guid: d3e26eb6c0871a646970e95794a3b5d7, type: 3}
+  - {fileID: 8300000, guid: b607c6eae08284740814d69e5c1e14fd, type: 3}
+  - {fileID: 8300000, guid: b72b947259dfec74399910cb60c2b851, type: 3}
+  - {fileID: 8300000, guid: c1f073ac32902d848ae385c7cce214f6, type: 3}
+  - {fileID: 8300000, guid: 4e16102aca91e4e40b4524dd8fa1aa7d, type: 3}
+  - {fileID: 8300000, guid: 6ceb95aad471e6e4b9935040fc8fb9d9, type: 3}
+  - {fileID: 8300000, guid: 85f6b70617d74ba458897b2085d13af3, type: 3}
+  - {fileID: 8300000, guid: 28c96b4082306174da2a02d4878167a3, type: 3}
+  - {fileID: 8300000, guid: 95a12c34ab6cb3b44a31426b05519792, type: 3}
+  - {fileID: 8300000, guid: 6b48e60e090d8084cbe49ed7447b8ef2, type: 3}
+  - {fileID: 8300000, guid: b607c6eae08284740814d69e5c1e14fd, type: 3}
+  - {fileID: 8300000, guid: f62105cce8abaa04fa9a0797dea8d1e0, type: 3}
+  - {fileID: 8300000, guid: 28c96b4082306174da2a02d4878167a3, type: 3}
+  - {fileID: 8300000, guid: eaa5ab9a53726964c9ee6d5d5ebcee3a, type: 3}
+  - {fileID: 8300000, guid: 491f64a328d377a4a918b292e00d89a1, type: 3}
+  - {fileID: 8300000, guid: c6ea40ba94cdefa46af9556a0229487c, type: 3}
+  - {fileID: 8300000, guid: f74a977794d4d56499c3a1d2a4aa3595, type: 3}
+  - {fileID: 8300000, guid: 0e3c8e9c150f9eb45a2122d50ff31c4d, type: 3}
+  - {fileID: 8300000, guid: c1f073ac32902d848ae385c7cce214f6, type: 3}
+  - {fileID: 8300000, guid: 9e5781d30f4911140be9a36a9694c87e, type: 3}
+  - {fileID: 8300000, guid: 96a0d3455d125f840ab477364fd2d1ed, type: 3}
+  - {fileID: 8300000, guid: 1483026aa9a07104f943557942e124b7, type: 3}
+  - {fileID: 8300000, guid: 453fbd7250fbf2242b3c0c756b2db750, type: 3}
+  - {fileID: 8300000, guid: eef40c2e78c6ff44087c915e09a5898d, type: 3}
+  - {fileID: 8300000, guid: c6ea40ba94cdefa46af9556a0229487c, type: 3}
+  - {fileID: 8300000, guid: 362b5056eb298ef46956828ed75961d2, type: 3}
+  - {fileID: 8300000, guid: ac669b5043c9ec943a41caa80cce3589, type: 3}
+  - {fileID: 8300000, guid: 85f6b70617d74ba458897b2085d13af3, type: 3}
+  - {fileID: 8300000, guid: 28c96b4082306174da2a02d4878167a3, type: 3}
+  - {fileID: 8300000, guid: 858dbc12a6ec1184a99aba781d63caba, type: 3}
+  - {fileID: 8300000, guid: b50260f57b4ff5e47b50e91096b1ec12, type: 3}
+  - {fileID: 8300000, guid: d8964135ec7a8534fb7a13fca5dd7f19, type: 3}
+  - {fileID: 8300000, guid: 85f6b70617d74ba458897b2085d13af3, type: 3}
+  - {fileID: 8300000, guid: 28c96b4082306174da2a02d4878167a3, type: 3}
+  - {fileID: 8300000, guid: 7f5f7b05168b1ec4a9fbecbcfe317cef, type: 3}
+  - {fileID: 8300000, guid: 4e16102aca91e4e40b4524dd8fa1aa7d, type: 3}
+  - {fileID: 8300000, guid: c6437e395c49fa04bba3485d8bef4504, type: 3}
+  - {fileID: 8300000, guid: 2ec94a18450e3244388c5e52b579de67, type: 3}
+  - {fileID: 8300000, guid: 96a0d3455d125f840ab477364fd2d1ed, type: 3}
+  - {fileID: 8300000, guid: 28c96b4082306174da2a02d4878167a3, type: 3}
+  - {fileID: 8300000, guid: e3fef5efeddf1b341a1bfef698243515, type: 3}
+  - {fileID: 8300000, guid: 64cf24cb818b3864181c89c4ca678133, type: 3}
+  - {fileID: 8300000, guid: 39da0035f733cda4c9781504c96f990b, type: 3}
   particlePrefab: {fileID: 3547273933907577662, guid: 16c9a7e89edc0b14c96df2e551367b00, type: 3}
   enemyPrefab: {fileID: 3194678067007217493, guid: c187740a9d1f3734997bc0470fec2b39, type: 3}
   progressSlider: {fileID: 755739105}
@@ -2416,7 +2473,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0.7, z: 0}
   maxNoise: 0.7
   minNoise: 0
-  maxDistance: 3
+  maxDistance: 3.5
   hitNoiseBoost: 1
   hitNoiseDuration: 1
   maxVolume: 1

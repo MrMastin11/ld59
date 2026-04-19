@@ -51,7 +51,7 @@ public class MovingSineWave : MonoBehaviour
         lr.positionCount = points;
         lr.useWorldSpace = false;
 
-        ComputerText.text = "Warning From Deep Space";
+        ComputerText.text = "Unknown signal";
         player.gameObject.SetActive(false);
 
         audioSource.loop = true;

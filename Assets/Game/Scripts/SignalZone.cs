@@ -17,6 +17,10 @@ public class SignalZone : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [Header("Audio")]
+    public AudioClip[] sounds;
+    private int currentSoundIndex = 0;
+
     [Header("Particles")]
     public ParticleSystem particlePrefab;
 
@@ -39,7 +43,6 @@ public class SignalZone : MonoBehaviour
     public float enemySpawnInterval = 2f;
     private bool isEndPhase = false;
 
-    // ÃËÎÁÀËÜÍÈÉ ÏÐÀÏÎÐ
     public static bool IsEndPhaseGlobal = false;
 
     private bool isStartPhase = true;
@@ -58,7 +61,6 @@ public class SignalZone : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-
         if (isEndPhase) return;
 
         AddNextToken();
@@ -85,7 +87,17 @@ public class SignalZone : MonoBehaviour
         }
 
         RandomSpawn();
-        audioSource.Play();
+
+        // ÇÂÓÊ ÏÎ ×ÅÐÇ²
+        if (audioSource != null && sounds.Length > 0)
+        {
+            audioSource.PlayOneShot(sounds[currentSoundIndex]);
+
+            currentSoundIndex++;
+
+            if (currentSoundIndex >= sounds.Length)
+                currentSoundIndex = 0;
+        }
     }
 
     // ===================== TEXT =====================
@@ -197,7 +209,7 @@ public class SignalZone : MonoBehaviour
     void StartEndPhase()
     {
         isEndPhase = true;
-        IsEndPhaseGlobal = true; // ÂÀÆËÈÂÎ
+        IsEndPhaseGlobal = true;
 
         transform.position = endPosition;
 
