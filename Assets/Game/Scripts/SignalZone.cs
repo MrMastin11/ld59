@@ -88,7 +88,6 @@ public class SignalZone : MonoBehaviour
 
         RandomSpawn();
 
-        // ÇÂÓÊ ÏÎ ×ÅÐÇ²
         if (audioSource != null && sounds.Length > 0)
         {
             audioSource.PlayOneShot(sounds[currentSoundIndex]);
@@ -99,8 +98,6 @@ public class SignalZone : MonoBehaviour
                 currentSoundIndex = 0;
         }
     }
-
-    // ===================== TEXT =====================
 
     string[] ParseText(string text)
     {
@@ -162,8 +159,6 @@ public class SignalZone : MonoBehaviour
 
         currentIndex++;
     }
-
-    // ===================== GAME =====================
 
     void SpawnEnemy()
     {

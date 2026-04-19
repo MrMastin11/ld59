@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 10437342}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.66, y: -0.18, z: 0}
+  m_LocalPosition: {x: 3.81, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &438947676
 Canvas:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ Canvas:
   m_GameObject: {fileID: 438947673}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -287,7 +287,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &438947677
 RectTransform:
@@ -297,8 +297,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438947673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.025623657, y: 0.025623657, z: 0.025623657}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2048797455}
@@ -309,8 +309,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 390.26437}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +863,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1116,7 +1116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1152356169552002576, guid: 619bdc37f73446d48ad6a3993dbe08df, type: 3}
   m_Color: {r: 0.49622637, g: 0.8865896, b: 1, a: 1}
   m_FlipX: 0
@@ -1401,10 +1401,10 @@ RectTransform:
   - {fileID: 1461148285}
   m_Father: {fileID: 755739104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0.0000076293945, y: -0.0000333786}
-  m_SizeDelta: {x: 0, y: 7.79}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 1.9999695}
+  m_SizeDelta: {x: 0, y: 3.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1428280331
 GameObject:
@@ -1438,10 +1438,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 755739104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: -0.00028777122}
-  m_SizeDelta: {x: 0, y: 7.7895}
+  m_AnchoredPosition: {x: 0, y: 2.0001998}
+  m_SizeDelta: {x: 0, y: 3.7895002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428280333
 MonoBehaviour:

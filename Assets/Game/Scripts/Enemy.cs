@@ -138,7 +138,6 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            // ‘≤Õ¿À‹Õ¿ ‘¿«¿
             if (SignalZone.IsEndPhaseGlobal && !isEndingTriggered)
             {
                 isEndingTriggered = true;
@@ -157,7 +156,6 @@ public class Enemy : MonoBehaviour
                     else
                     {
                         Debug.LogWarning("No ParticleSystem found on endHitParticles!");
-                        //Destroy(p, 5f);
                     }
 
                 }
@@ -165,8 +163,6 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(LoadEndScene());
                 return;
             }
-
-            // «¬»◊¿…Õ¿ ÀŒ√≤ ¿
             if (audioSource != null && hitSound != null)
                 audioSource.PlayOneShot(hitSound);
 

@@ -19,8 +19,8 @@ public class MovingSineWave : MonoBehaviour
     public float maxDistance = 5f;
 
     [Header("Hit Noise Boost")]
-    public float hitNoiseBoost = 0.5f;      // різкий буст
-    public float hitNoiseDuration = 0.5f;   // час повернення
+    public float hitNoiseBoost = 0.5f;   
+    public float hitNoiseDuration = 0.5f; 
 
     private float currentNoiseBoost = 0f;
     private float noiseVelocity = 0f;
@@ -69,15 +69,12 @@ public class MovingSineWave : MonoBehaviour
         signalZone.RandomSpawn();
         player.gameObject.SetActive(true);
 
-        // старт звук
         if (startSound != null)
             audioSource.PlayOneShot(startSound);
 
-        // основний звук
         audioSource.Play();
     }
 
-    //  виклик при ударі
     public void TriggerNoiseBoost()
     {
         currentNoiseBoost = hitNoiseBoost;
@@ -87,7 +84,6 @@ public class MovingSineWave : MonoBehaviour
     {
         if (!isOnScene || player == null || signalZone == null) return;
 
-        // плавне затухання бусту
         currentNoiseBoost = Mathf.SmoothDamp(
             currentNoiseBoost,
             0f,
@@ -101,15 +97,12 @@ public class MovingSineWave : MonoBehaviour
         float t = Mathf.Clamp01(distance / maxDistance);
         t = t * t;
 
-        // базовий шум + буст
         float baseNoise = Mathf.Lerp(maxNoise, minNoise, t);
         float noiseAmount = baseNoise + currentNoiseBoost;
 
-        // товщина
         lr.startWidth = 0.1f + Mathf.Sin(Time.time * 5f) * 0.02f;
         lr.endWidth = lr.startWidth;
 
-        // звук
         float volume = Mathf.Lerp(maxVolume, minVolume, t);
         audioSource.volume = volume;
         audioSource.pitch = Mathf.Lerp(0.5f, 1.5f, 1 - t);
